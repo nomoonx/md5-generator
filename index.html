@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title data-i18n="meta.title">MD5在线生成器 - 免费MD5加密工具 | 文本和文件MD5计算</title>
+    <meta name="description" data-i18n="meta.description"
+        content="免费在线MD5生成器，支持文本和文件MD5哈希计算。快速、安全、无需注册。提供MD5加密、校验和验证功能。">
+    <meta name="keywords" content="md5生成器,md5在线,md5加密,md5计算器,文件md5,md5校验工具,在线hash工具,md5 generator,md5 hash">
+    <meta name="author" content="MD5 Generator">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/md5-generator/">
+    <meta property="og:title" data-i18n="meta.title" content="MD5在线生成器 - 免费MD5加密工具">
+    <meta property="og:description" data-i18n="meta.description" content="免费在线MD5生成器，支持文本和文件MD5哈希计算。">
+    <meta property="og:image" content="https://yourusername.github.io/md5-generator/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/md5-generator/">
+    <meta property="twitter:title" data-i18n="meta.title" content="MD5在线生成器 - 免费MD5加密工具">
+    <meta property="twitter:description" data-i18n="meta.description" content="免费在线MD5生成器，支持文本和文件MD5哈希计算。">
+    <meta property="twitter:image" content="https://yourusername.github.io/md5-generator/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourusername.github.io/md5-generator/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Crypto-js Library for MD5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+        integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Google Analytics (Replace with your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "MD5在线生成器",
+        "description": "免费在线MD5哈希生成工具，支持文本和文件MD5计算",
+        "url": "https://yourusername.github.io/md5-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "operatingSystem": "Any"
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
+                        <path d="M8 16L14 10L20 16L14 22L8 16Z" fill="white" opacity="0.9" />
+                        <path d="M14 10L20 16L26 10L20 4L14 10Z" fill="white" opacity="0.6" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                                <stop stop-color="#667eea" />
+                                <stop offset="1" stop-color="#764ba2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span data-i18n="header.title">MD5 生成器</span>
+                </div>
+
+                <nav class="nav">
+                    <select id="languageSelect" class="language-select" aria-label="Select Language">
+                        <option value="zh-CN">简体中文</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                    </select>
+
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Google AdSense - Top Banner (Replace with your ad code) -->
+    <div class="ad-banner-top">
+        <div class="ad-placeholder">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Section - Main Tool -->
+                <div class="left-section">
+                    <div class="tool-card">
+                        <h1 data-i18n="hero.title">在线MD5哈希生成器</h1>
+                        <p data-i18n="hero.subtitle" class="subtitle">快速、安全、免费的MD5加密工具</p>
+
+                        <!-- Text Input -->
+                        <div class="input-section">
+                            <label for="textInput" data-i18n="input.textLabel">输入文本</label>
+                            <textarea id="textInput" data-i18n-placeholder="input.textPlaceholder"
+                                placeholder="在此输入要生成MD5哈希的文本..." rows="6"></textarea>
+                        </div>
+
+                        <!-- File Upload -->
+                        <div class="file-upload-section">
+                            <label data-i18n="input.fileLabel">或上传文件</label>
+                            <div class="file-drop-zone" id="fileDropZone">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="17 8 12 3 7 8" />
+                                    <line x1="12" y1="3" x2="12" y2="15" />
+                                </svg>
+                                <p data-i18n="input.dragDrop">拖拽文件到此处或点击上传</p>
+                                <p class="file-info" data-i18n="input.fileInfo">支持任意文件类型，最大100MB</p>
+                                <input type="file" id="fileInput" hidden>
+                            </div>
+                            <div id="fileName" class="file-name"></div>
+                        </div>
+
+                        <!-- Generate Button -->
+                        <button id="generateBtn" class="generate-btn" data-i18n="button.generate">
+                            生成MD5
+                        </button>
+
+                        <!-- MD5 Output -->
+                        <div class="output-section" id="outputSection">
+                            <label data-i18n="output.label">MD5 哈希输出</label>
+                            <div class="output-display">
+                                <code id="md5Output"></code>
+                                <button id="copyBtn" class="copy-btn" data-i18n="button.copy" title="Copy to clipboard">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="output-meta">
+                                <span data-i18n="output.length">长度:</span> <span id="hashLength">32</span> <span
+                                    data-i18n="output.characters">字符</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ad Banner Bottom -->
+                    <div class="ad-banner-bottom">
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                            data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+
+                <!-- Right Section - Features & Info -->
+                <div class="right-section">
+                    <!-- Features -->
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3 data-i18n="features.fast.title">快速生成</h3>
+                            <p data-i18n="features.fast.desc">瞬间完成MD5哈希计算</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3 data-i18n="features.secure.title">安全可靠</h3>
+                            <p data-i18n="features.secure.desc">本地计算，数据不上传</p>
+                        </div>
+                    </div>
+
+                    <!-- Ad Sidebar -->
+                    <div class="ad-sidebar">
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                            data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <!-- Educational Content -->
+                    <div class="info-card">
+                        <h2 data-i18n="about.title">关于MD5</h2>
+                        <p data-i18n="about.desc1">
+                            MD5（Message-Digest Algorithm 5）是一个广泛使用的密码散列函数，可以产生128位（16字节）的哈希值。
+                        </p>
+                        <p data-i18n="about.desc2">
+                            MD5常用于验证数据完整性、数字签名和密码存储。然而，由于安全性问题，不建议用于加密敏感密码。
+                        </p>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div class="faq-section">
+                        <h2 data-i18n="faq.title">常见问题</h2>
+
+                        <details class="faq-item">
+                            <summary data-i18n="faq.q1.question">MD5是可逆的吗？</summary>
+                            <p data-i18n="faq.q1.answer">
+                                不，MD5是单向哈希函数，理论上不可逆。但由于彩虹表等技术，简单的MD5哈希可能被破解。
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary data-i18n="faq.q2.question">如何验证文件完整性？</summary>
+                            <p data-i18n="faq.q2.answer">
+                                下载文件后，使用本工具生成MD5值，与官方提供的MD5值对比。如果一致，说明文件未被篡改。
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary data-i18n="faq.q3.question">MD5安全吗？</summary>
+                            <p data-i18n="faq.q3.answer">
+                                MD5已被证明存在碰撞漏洞，不建议用于密码加密。对于安全要求高的场景，建议使用SHA-256等更安全的算法。
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 MD5 Generator. <span data-i18n="footer.rights">保留所有权利</span></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
