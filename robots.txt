@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private directories (if any in future)
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://md5.nomoon.me/sitemap.xml
+
+# Crawl-delay (optional, recommended for smaller sites)
+Crawl-delay: 1
